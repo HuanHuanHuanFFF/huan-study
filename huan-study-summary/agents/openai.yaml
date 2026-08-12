@@ -4,4 +4,4 @@ interface:
   default_prompt: "使用 $huan-study-summary 整理本次学习对话并生成可下载的 Markdown 总结。"
 
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

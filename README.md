@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | `huan-study-teach` | 从问题与设计压力出发，建立少而准的因果模型 | 支持自动匹配和显式调用 |
 | `huan-study-grill` | 通过逐轮追问检验独立复述、迁移和追问能力 | 仅显式调用 |
-| `huan-study-summary` | 将学习对话整理成全量、增量或修订版 Markdown 总结 | 支持自动匹配和显式调用 |
+| `huan-study-summary` | 将学习对话整理成全量、增量或修订版 Markdown 总结 | 仅显式调用 |
 
 ## 安装
 
@@ -42,7 +42,7 @@ ChatGPT 使用 `@skill-name`，Codex CLI 和 IDE Extension 使用 `$skill-name`�
 @huan-study-summary 把本次学习对话整理成增量 Markdown 总结。
 ```
 
-`huan-study-teach` 与 `huan-study-summary` 也允许模型根据任务自动匹配。`huan-study-grill` 不会自动介入普通讲解。
+`huan-study-teach` 允许模型根据任务自动匹配。`huan-study-grill` 与 `huan-study-summary` 仅在用户显式调用时运行。
 
 ## 结构
 

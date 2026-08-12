@@ -1,6 +1,6 @@
 ---
 name: huan-study-summary
-description: 将当前学习对话整理成可下载的 Markdown 知识总结。用户要求总结本次对话、整理成 Markdown、生成总结文件，或更新、修订已有对话总结时使用；支持全量、增量和修订总结。不用于普通外部文档、网页、PDF 或文件内容摘要。
+description: 将当前学习对话整理成全量、增量或修订版的可下载 Markdown 知识总结。
 ---
 
 # Huan Study：总结
@@ -43,6 +43,8 @@ description: 将当前学习对话整理成可下载的 Markdown 知识总结。
 ## 生成文件
 
 创建标准 Markdown 文件，不在聊天框粘贴完整正文。
+
+生成文件前，先检查当前项目或工作区是否有明确的保存位置、命名和修订惯例；有惯例时遵守。没有惯例，或无法确定修订时应覆盖原文件还是创建新文件时，先询问用户。
 
 - 标题和开头注明范围、总结类型与目标。
 - 文件名只用英文、数字和连字符，格式为 `YYYY-MM-DD-topic-full-summary.md`、`YYYY-MM-DD-topic-incremental-summary.md` 或 `YYYY-MM-DD-topic-revised-summary.md`。
