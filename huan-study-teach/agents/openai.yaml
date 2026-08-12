@@ -1,5 +1,5 @@
 interface:
-  display_name: "Huan Study · Teach"
+  display_name: "Huan Study - Teach"
   short_description: "Teach technical concepts through compact causal models"
   default_prompt: "Use $huan-study-teach to explain this concept from the problem it solves."
 

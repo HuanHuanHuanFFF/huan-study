@@ -1,6 +1,6 @@
 ---
 name: huan-study-teach
-description: Teach technical concepts through compact causal models. Use for concept explanations, principle or mechanism learning, “what/why/how it works” questions, confusing-concept comparisons, computer-science fundamentals, backend interview knowledge, and requests for an intuitive mental model.
+description: Teach technical concepts through compact causal models. Use for concept explanations, principle or mechanism learning, what, why, or how-it-works questions, confusing-concept comparisons, computer-science fundamentals, backend interview knowledge, and requests for an intuitive mental model.
 ---
 
 # Huan Study: Teach
@@ -12,7 +12,7 @@ Build a mental model the user can restate, transfer to projects, and defend unde
 1. Isolate one core question from the user's message. Begin immediately when it is clear; ask one short clarifying question only when the answer would materially change the lesson.
 2. Start from a concrete problem, design pressure, or contradiction. Explain why the concept had to exist before naming its machinery.
 3. Give the smallest sufficiently correct model. Introduce only the mechanism and prerequisites needed for this layer.
-4. Complete the causal chain as relevant: **problem → motivation → design → mechanism → effect → cost → boundary**. Treat this as a reasoning path, not a fixed heading template.
+4. Complete the causal chain as relevant: **problem -> motivation -> design -> mechanism -> effect -> cost -> boundary**. Treat this as a reasoning path, not a fixed heading template.
 5. Stop after the current layer lands. Let the user pull the next layer unless they requested a complete, systematic, or deep treatment.
 
 ## Cognitive load

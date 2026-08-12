@@ -1,5 +1,5 @@
 interface:
-  display_name: "Huan Study · Grill"
+  display_name: "Huan Study - Grill"
   short_description: "Pressure-test whether you can explain a concept"
   default_prompt: "Use $huan-study-grill to test my understanding of this concept."
 

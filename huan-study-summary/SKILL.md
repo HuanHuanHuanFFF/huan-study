@@ -1,65 +1,65 @@
 ---
 name: huan-study-summary
-description: 将当前学习对话整理成全量、增量或修订版的可下载 Markdown 知识总结。
+description: Turn the current learning conversation into a downloadable full, incremental, or revised Markdown knowledge summary.
 ---
 
-# Huan Study：总结
+# Huan Study: Summary
 
-将对话沉淀成可放入知识库、交给后续 Agent 继续处理，并可用于复习和面试表达的 Markdown 文件。重建知识结构，不复刻聊天记录，也不扩写成百科。
+Turn the conversation into a Markdown file suitable for a knowledge base, follow-up work by another agent, review, and interview preparation. Reconstruct the knowledge structure instead of copying the transcript or expanding it into an encyclopedia.
 
-## 确定范围
+## Determine the scope
 
-先识别总结类型：
+First identify the summary type:
 
-- **全量**：用户要求“从开始到现在”“整个对话”“完整复盘”或“全量总结”。范围是本次对话开始至当前消息。
-- **增量**：用户要求“从上次总结到现在”“刚刚这些”“新增内容”或“增量总结”。范围是最近一次总结边界之后至当前消息。
-- **修订**：用户指出遗漏、错误或不严谨，并要求补充、重写或更新已有总结。以原总结和后续纠错为输入。
+- **Full**: The user asks for everything from the beginning, the entire conversation, a complete review, or a full summary. Cover the conversation from its beginning through the current message.
+- **Incremental**: The user asks for everything since the previous summary, the latest discussion, new material, or an incremental summary. Cover the messages after the most recent summary boundary through the current message.
+- **Revised**: The user identifies an omission, error, or imprecision and asks to supplement, rewrite, or update an existing summary. Use the original summary and the subsequent corrections as inputs.
 
-类型不明确但能可靠定位最近一次总结边界时，按增量处理，并在文件开头说明判断。无法定位边界时，只询问一次范围。修订总结的原文件不可访问时，请用户提供或重新选择文件。只有范围与输入可确定时才开始写作。
+If the type is unclear but the most recent summary boundary can be located reliably, create an incremental summary and state that decision at the beginning of the file. If the boundary cannot be located, ask one scope question. If the original file for a revision is inaccessible, ask the user to provide or select it again. Begin writing only after the scope and inputs are known.
 
-## 提取结论
+## Extract conclusions
 
-阅读范围内的对话；修订时同时读取原总结。提取：
+Read the conversation within scope; for a revision, also read the original summary. Extract:
 
-- 讨论过的知识模块及主因果链；
-- 用户主动追问、质疑、纠正或表示没懂的点；
-- 最终确认的结论、仍未解决的冲突；
-- 已讲清内容与真正待补内容。
+- the knowledge modules discussed and their main causal chains;
+- the user's follow-up questions, doubts, corrections, and points of confusion;
+- the final confirmed conclusions and any unresolved conflicts;
+- what has been explained clearly and what still needs work.
 
-明确纠正过的说法以最终确认版本为主，并简要保留原误区及修正原因。仍未解决的冲突保留各方说法、依据和当前不确定性，不把最后出现的说法自动视为正确。
+For an explicitly corrected claim, use the final confirmed version and briefly retain the original misconception and why it was corrected. For an unresolved conflict, preserve each position, its evidence, and the current uncertainty; do not treat the last claim in the conversation as automatically correct.
 
-不大量引入范围外知识。只有缺少少量背景会造成因果断裂时才补充，并标为“补充背景”。
+Avoid introducing substantial knowledge from outside the conversation. Add only the small amount of background needed to prevent a broken causal chain, and label it "Supplementary context."
 
-## 重组知识
+## Reorganize the knowledge
 
-按知识模块组织，不按消息时间排列。每个重要模块按实际需要覆盖：
+Organize by knowledge module, not message chronology. Cover the following path as needed for each important module:
 
-> 问题 → 动机或核心矛盾 → 设计与机制 → 效果 → 代价与边界
+> problem -> motivation or core tension -> design and mechanism -> effect -> cost and boundary
 
-同时保留易混点、本次纠错、关键追问与最终答案，以及能直接复述的面试短答案。小知识点可合并进“零散补充”或“易混点集中纠正”，但不能因篇幅小而遗漏。
+Also preserve confusing points, corrections made during the conversation, key follow-up questions and final answers, and concise interview answers that can be spoken directly. Merge small points into sections such as "Miscellaneous notes" or "Corrections to common confusions" when useful, but do not omit them merely because they are brief.
 
-结构服务内容，不创建空章节，也不机械套用全部标题。默认依次考虑：范围说明、问题总览、知识模块、易混点集中纠正、面试短答案、后续待补。只保留有内容的部分。
+Let the content determine the structure. Do not create empty sections or mechanically apply every heading. Consider, in order: scope, problem overview, knowledge modules, corrections to common confusions, interview answers, and open items. Keep only sections that have content.
 
-## 生成文件
+## Generate the file
 
-创建标准 Markdown 文件，不在聊天框粘贴完整正文。
+Create a standard Markdown file and do not paste the full body into the chat. Write in the user's language unless the user requests another language.
 
-生成文件前，先检查当前项目或工作区是否有明确的保存位置、命名和修订惯例；有惯例时遵守。没有惯例，或无法确定修订时应覆盖原文件还是创建新文件时，先询问用户。
+Before generating the file, check the current project or workspace for established destination, naming, and revision conventions, and follow them when present. If no convention exists, or if it is unclear whether a revision should overwrite the original or create a new file, ask the user first.
 
-- 标题和开头注明范围、总结类型与目标。
-- 文件名只用英文、数字和连字符，格式为 `YYYY-MM-DD-topic-full-summary.md`、`YYYY-MM-DD-topic-incremental-summary.md` 或 `YYYY-MM-DD-topic-revised-summary.md`。
-- 代码与命令使用代码块；公式使用 Markdown 或 LaTeX 数学格式。
-- 面试答案保持短小、有因果、可直接说出口。
-- 待补清单只列尚未解决的内容，不重复已完成部分。
+- State the scope, summary type, and purpose in the title and introduction.
+- Use only English letters, digits, and hyphens in the filename. Use `YYYY-MM-DD-topic-full-summary.md`, `YYYY-MM-DD-topic-incremental-summary.md`, or `YYYY-MM-DD-topic-revised-summary.md`.
+- Put code and commands in fenced code blocks. Format formulas with Markdown or LaTeX math.
+- Keep interview answers concise, causal, and easy to say aloud.
+- List only unresolved material under open items; do not repeat completed material.
 
-## 交付检查
+## Delivery checks
 
-交付前确认：
+Before delivery, confirm that:
 
-- 总结类型与来源范围准确；
-- 用户的关键追问、混淆和纠错没有遗漏；
-- 已完成、待补与未解决冲突得到区分；
-- 主结论不是定义和结论的堆叠，因果链没有关键跳跃；
-- Markdown 文件实际存在，下载链接可用。
+- the summary type and source scope are accurate;
+- none of the user's key follow-up questions, confusions, or corrections are missing;
+- completed material, open items, and unresolved conflicts are distinguished;
+- the main conclusions are connected by causal reasoning rather than stacked definitions and conclusions;
+- the Markdown file exists and its download link works.
 
-检查过程不写入总结正文。完成后仅简短回复：`整理好了，下载链接：`，并附文件链接。
+Keep the checking process out of the summary itself. After completion, reply briefly in the user's language and include the file link.

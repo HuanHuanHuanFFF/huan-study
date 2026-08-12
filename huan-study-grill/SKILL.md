@@ -18,7 +18,7 @@ Test recall and causal understanding, not recognition of a polished explanation.
 ## Question discipline
 
 - Keep each turn answerable without notes and focused on one idea.
-- Prefer “why,” “what changes if,” and concrete scenarios over definition recall.
+- Prefer "why," "what changes if," and concrete scenarios over definition recall.
 - Distinguish a missing fact from a broken mental model. Verify discoverable facts yourself when accuracy matters.
 - If the user is stuck, reduce the problem or offer two to three scaffolding choices.
 - If an answer is wrong, name the exact broken link, give the minimum correction, then ask the user to explain it again.
