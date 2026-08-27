@@ -16,21 +16,23 @@
 
 ### ChatGPT / Work
 
-把本仓库地址交给 `@skill-creator`，要求安装三个 Skill 子目录；也可以只安装需要的一项。
+可以把整个仓库作为 `Huan Study` Plugin 安装。Plugin 会同时提供三个 Skill，并保留各自调用策略。
+
+也可以只安装需要的 Skill 子目录：
 
 ```text
-@skill-creator 请安装这个仓库中的 huan-study-teach、huan-study-grill 和 huan-study-summary。
+@skill-creator 请安装这个仓库 skills 目录中的 huan-study-teach、huan-study-grill 和 huan-study-summary。
 ```
 
 ### Codex CLI / IDE Extension
 
-可以让 `$skill-installer` 从本仓库安装三个子目录，或把每个 Skill 目录分别放入：
+优先把整个仓库作为 Plugin 安装。若只需要单个 Skill，也可以让 `$skill-installer` 安装 `skills/` 下的对应子目录，或把它复制到：
 
 ```text
 $HOME/.agents/skills/
 ```
 
-Codex 支持从该用户级目录发现本地 Skill。更多格式、调用与安装规则见 [OpenAI Skills 文档](https://learn.chatgpt.com/docs/build-skills)。
+更多格式、调用与安装规则见 [OpenAI Skills 文档](https://learn.chatgpt.com/docs/build-skills)。
 
 ## 使用
 
@@ -48,18 +50,21 @@ ChatGPT 使用 `@skill-name`，Codex CLI 和 IDE Extension 使用 `$skill-name`�
 
 ```text
 huan-study/
-├── huan-study-teach/
-│   ├── SKILL.md
-│   └── agents/openai.yaml
-├── huan-study-grill/
-│   ├── SKILL.md
-│   └── agents/openai.yaml
-└── huan-study-summary/
-    ├── SKILL.md
-    └── agents/openai.yaml
+├── .codex-plugin/
+│   └── plugin.json
+└── skills/
+    ├── huan-study-teach/
+    │   ├── SKILL.md
+    │   └── agents/openai.yaml
+    ├── huan-study-grill/
+    │   ├── SKILL.md
+    │   └── agents/openai.yaml
+    └── huan-study-summary/
+        ├── SKILL.md
+        └── agents/openai.yaml
 ```
 
-每个子目录都能独立安装：
+Plugin 通过 `.codex-plugin/plugin.json` 发现整个 Skill 组。每个 `skills/` 子目录仍可独立安装：
 
 - `SKILL.md` 定义触发范围与执行规则。
 - `agents/openai.yaml` 定义界面名称、默认调用示例和隐式触发策略。
