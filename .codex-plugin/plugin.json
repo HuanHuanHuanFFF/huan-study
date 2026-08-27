@@ -1,0 +1,37 @@
+{
+  "name": "huan-study",
+  "version": "1.0.0",
+  "description": "Causal teaching, active-recall grilling, and reusable learning summaries.",
+  "author": {
+    "name": "HuanHuanHuanFFF",
+    "url": "https://github.com/HuanHuanHuanFFF"
+  },
+  "homepage": "https://github.com/HuanHuanHuanFFF/huan-study",
+  "repository": "https://github.com/HuanHuanHuanFFF/huan-study",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "learning",
+    "teaching",
+    "interview-preparation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Huan Study",
+    "shortDescription": "Teach, test, and summarize technical learning.",
+    "longDescription": "Build compact causal models, pressure-test understanding through active recall, and turn learning conversations into reusable Markdown summaries.",
+    "developerName": "HuanHuanHuanFFF",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/HuanHuanHuanFFF/huan-study",
+    "defaultPrompt": [
+      "Explain this concept from the problem it solves.",
+      "Test whether I can explain this concept independently.",
+      "Turn this learning conversation into a Markdown summary."
+    ]
+  }
+}
