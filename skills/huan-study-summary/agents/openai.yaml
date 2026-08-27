@@ -1,0 +1,7 @@
+interface:
+  display_name: "Huan Study - Summary"
+  short_description: "Turn a learning conversation into a reusable Markdown summary"
+  default_prompt: "Use $huan-study-summary to turn this learning conversation into a downloadable Markdown summary."
+
+policy:
+  allow_implicit_invocation: false
